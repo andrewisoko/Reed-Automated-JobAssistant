@@ -4,18 +4,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
-class credentials():
+class Credentials():
     
-     def __init__(self, chromesettings:ChromeSettings):
+     def __init__(self, chromesettings:ChromeSettings,inputs_instance:Inputs):
         
         self.chromesettings = chromesettings
+        self.inputs_instance = inputs_instance
         
         
         
      def webpage_interaction_credentials(self):
          
-         
-        inputs_instance_credentials = Inputs()
         
          
         self.chromesettings.driver.refresh()
@@ -28,12 +27,12 @@ class credentials():
         time.sleep(10)
         email_bar = self.chromesettings.driver.find_element(By.ID, "signin_email")
         time.sleep(self.chromesettings.random_time)
-        email_bar.send_keys(inputs_instance_credentials.email + Keys.ENTER)
+        email_bar.send_keys(self.inputs_instance.email + Keys.ENTER)
 
 
         password_bar = self.chromesettings.driver.find_element(By.ID, "signin_password")
         time.sleep(self.chromesettings.random_time)
-        password_bar.send_keys(inputs_instance_credentials.password)
+        password_bar.send_keys(self.inputs_instance.password)
 
 
         continue_button = self.chromesettings.driver.find_element(By.ID, "signin_button")

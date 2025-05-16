@@ -16,7 +16,7 @@ class Inputs:
     def input_collection(self):
         
         self.email = input("Please enter your Reed email: ")
-        self.email = input("Please enter your Reed password: ")
+        self.password = input("Please enter your Reed password: ")
         
         count = 5
         

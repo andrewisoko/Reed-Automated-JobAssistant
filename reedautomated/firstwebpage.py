@@ -9,9 +9,10 @@ from selenium.webdriver.common.by import By
 
 class FirstWebPage():
     
-    def __init__(self,chromesettings:ChromeSettings):
+    def __init__(self,chromesettings:ChromeSettings,inputs_instance:Inputs):
         
         self.chromesettings = chromesettings
+        self.inputs_instance = inputs_instance
         self.jobtitle_firstwp = None
         self.joblocation_firstwp = None
         self.what = None
@@ -20,8 +21,6 @@ class FirstWebPage():
         
     def webpage_interaction_firstwp(self):
 
-        
-        inputs_instance_firstwp = Inputs()
        
         time.sleep(10)
         accept_button = self.chromesettings.driver.find_element(
@@ -32,7 +31,7 @@ class FirstWebPage():
         
         
 
-        self.jobtitle_firstwp = random.choice(inputs_instance_firstwp.jobtitle_list)
+        self.jobtitle_firstwp = random.choice(self.inputs_instance.jobtitle_list)
         self.what = self.chromesettings.driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div/div[4]/div/section[1]/main/form/div/div/div/div[1]/span/input",
@@ -40,7 +39,7 @@ class FirstWebPage():
         time.sleep(self.chromesettings.random_time)
         self.what.send_keys(self.jobtitle_firstwp)
 
-        self.joblocation_firstwp = random.choice(inputs_instance_firstwp.joblocation_list)
+        self.joblocation_firstwp = random.choice(self.inputs_instance.joblocation_list)
         self.where = self.chromesettings.driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div/div[4]/div/section[1]/main/form/div/div/div/div[2]/span/input",

@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import random
+from datetime import timedelta
 
 class ChromeSettings:
 
@@ -38,3 +39,5 @@ class ChromeSettings:
         self.driver.get("https://www.reed.co.uk/")
         
         self.random_time = random.randrange(2, 11)
+        
+        self.loop_duration_time = timedelta(minutes=30)
