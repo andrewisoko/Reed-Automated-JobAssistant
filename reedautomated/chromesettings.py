@@ -1,8 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import random
 
-class Options:
+class ChromeSettings:
 
     def __init__(self):
 
@@ -35,3 +36,5 @@ class Options:
         )
 
         self.driver.get("https://www.reed.co.uk/")
+        
+        self.random_time = random.randrange(2, 11)

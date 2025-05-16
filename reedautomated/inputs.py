@@ -1,4 +1,4 @@
-class inputs:
+class Inputs:
     
     """Collects the data essential for the website interraction"""
     
