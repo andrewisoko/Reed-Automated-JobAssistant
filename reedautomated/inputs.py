@@ -17,16 +17,26 @@ class Inputs:
         
         self.email = input("Please enter your Reed email: ")
         self.password = input("Please enter your Reed password: ")
+      
         
-        count = 5
+        print("Up to 5 desired job titles and locations.\nIt is HIGHLY RECOMMENDED to be specific with the job title ex:'IT Support Specialist'")
         
-        print("Insert at least 5 desired job titles.\nIt is HIGHLY RECOMMENDED to be specific with the job title ex:'IT Support Specialist'")
-        while count > 0:
+        while True:
+            
+            job_titles_amount = input("Would you like to add an additional job title? Yes/No: ")
             
             self.job_title = input("Enter desired job title: ")
             self.jobtitle_list.append(self.job_title)
             
-            count -= 1
+            if job_titles_amount == "Yes":
+                self.job_title = input("Enter desired job location: ")
+                self.jobtitle_list.append(self.job_location)
+            elif job_titles_amount == "No":
+                break
+            else:
+                print("Invalid input")
+            
+      
             
         self.job_location = input("Enter desired job location: ")
         self.joblocation_list.append(self.job_location)
@@ -44,10 +54,6 @@ class Inputs:
             else:
                 print("Invalid input")
         
-                 
-                
-            
-            
     
         print (f"job title list {self.jobtitle_list}\nJob location list {self.joblocation_list}")
         

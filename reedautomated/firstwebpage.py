@@ -20,7 +20,11 @@ class FirstWebPage():
         
         
     def webpage_interaction_firstwp(self):
+        
+        
+        """Interacts with the first webpage."""
 
+       
        
         time.sleep(10)
         accept_button = self.chromesettings.driver.find_element(
@@ -45,7 +49,7 @@ class FirstWebPage():
             "/html/body/div[2]/div/div[4]/div/section[1]/main/form/div/div/div/div[2]/span/input",
         )
         time.sleep(self.chromesettings.random_time)
-        self.where.send_keys(random.choice(self.joblocation_firstwp))
+        self.where.send_keys(self.joblocation_firstwp)
         
 
         search_jobs = self.chromesettings.driver.find_element(By.ID, "homepageSearchButton")
