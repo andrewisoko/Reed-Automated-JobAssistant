@@ -26,12 +26,12 @@ class FirstWebPage():
 
        
        
-        time.sleep(10)
-        accept_button = self.chromesettings.driver.find_element(
-        By.XPATH, "/html/body/div[3]/div[2]/div/div/div[2]/div/div/button"
-        )
-        time.sleep(self.chromesettings.random_time)
-        accept_button.click()
+        # time.sleep(10)
+        # accept_button = self.chromesettings.driver.find_element(
+        # By.XPATH, "/html/body/div[3]/div[2]/div/div/div[2]/div/div/button"
+        # )
+        # time.sleep(self.chromesettings.random_time)
+        # accept_button.click()
         
         
 
@@ -52,6 +52,14 @@ class FirstWebPage():
         self.where.send_keys(self.joblocation_firstwp)
         
 
-        search_jobs = self.chromesettings.driver.find_element(By.ID, "homepageSearchButton")
+        search_jobs = self.chromesettings.driver.find_element(By.CSS_SELECTOR,"button.index-module_searchBtn__lVpXB.btn.btn-primary")
         time.sleep(self.chromesettings.random_time)
         search_jobs.click()
+        
+        self.chromesettings.driver.refresh()
+        
+        time.sleep(10)
+        last_week = self.chromesettings.driver.find_element(By.XPATH,"/html/body/div[1]/div[4]/div/div[3]/aside/div[2]/div/div[6]/div[2]/div/select/option[4]")
+        last_week.click()
+        
+        

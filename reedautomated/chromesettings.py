@@ -36,10 +36,8 @@ class ChromeSettings:
         self.driver.execute_script(
             "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
         )
-
-        self.driver.get("https://www.reed.co.uk/")
         
-        
+        self.main_url = self.driver.get("https://www.reed.co.uk/")
         self.random_time = random.randrange(2, 11)
         self.loop_duration_time = timedelta(minutes=30)
         self.wait = WebDriverWait(self.driver, 10)
