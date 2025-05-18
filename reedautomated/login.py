@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 import random
-import pickle
 
 class Login():
     
@@ -16,7 +15,7 @@ class Login():
         self.inputs_instance = inputs_instance
         
             
-    def login_no_cookie(self):
+    def loginpage_interaction(self):
         
         self.chromesettings.driver.get("https://secure.reed.co.uk/login?state=hKFo2SB6a0ludTZFdW8zNmRNUXR6bWJsUFFfeEg3bTdQaW1ZOKFupWxvZ2luo3RpZNkgazc3dE9sbktIb3Y2N1IyeDNuekZ3WTBPa2xwTXQ3c3ijY2lk2SBUS2JBVXhQRUFEWEFYZGYyN05tWUp2MEtnNmFEZnJkdA&client=TKbAUxPEADXAXdf27NmYJv0Kg6aDfrdt&protocol=oauth2&scope=openid%20profile%20email%20offline_access&redirect_uri=https%3A%2F%2Fwww.reed.co.uk%2Fauthentication%2Flogin%2Fcallback&audience=https%3A%2F%2Fwww.reed.co.uk%2F&response_type=code&response_mode=query&nonce=a2pJRGxmYTVSdFA4MGNCNlFlMFhxVjY0MWNMQXFYTkkyMnRmaHpOTkotZw%3D%3D&code_challenge=iwsfbRafIlFXcvUcGPk_sNu65V148bDShu1QCMC4SKM&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMS4zIn0%3D")
         
@@ -36,21 +35,10 @@ class Login():
         continue_button.click()
         
               
-        time.sleep(10)
+        time.sleep(15)
         accept_button = self.chromesettings.driver.find_element(
         By.XPATH,"/html/body/div[2]/div[2]/div/div/div[2]/div/div/button"
         )
-        time.sleep(self.chromesettings.random_time)
         accept_button.click()
         
-        
-        cookies = self.chromesettings.driver.get_cookies()
-        with open("reedautomated/cookies/save-cookies.pkl", "wb") as file:
-            pickle.dump(cookies, file)
-        
-            
-        print("cookie created")
-            
-        self.chromesettings.driver.close()
-      
     

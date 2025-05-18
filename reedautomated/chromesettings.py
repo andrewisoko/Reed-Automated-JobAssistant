@@ -14,6 +14,7 @@ class ChromeSettings:
 
         # Adding argument to disable the AutomationControlled flag
         self.options.add_argument("--disable-blink-features=AutomationControlled")
+        
 
         # Disabling password manager pop up
         prefs = {
@@ -36,8 +37,7 @@ class ChromeSettings:
         self.driver.execute_script(
             "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
         )
-        
-        self.main_url = self.driver.get("https://www.reed.co.uk/")
+    
         self.random_time = random.randrange(2, 11)
-        self.loop_duration_time = timedelta(minutes=30)
+        self.loop_duration_time = timedelta(minutes=random.choice(range(15,30)))
         self.wait = WebDriverWait(self.driver, 10)
