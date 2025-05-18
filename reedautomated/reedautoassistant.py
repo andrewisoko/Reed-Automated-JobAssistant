@@ -69,7 +69,7 @@ class AutoAssistant():
                                 f"Current value in the ITERATION = {self.job_spec_name} and  {self.location_spec_name} \nWeb element names {self.job_title_text} and {self.job_location_text}"
                             )
                 
-                    if  self.location_spec_name in self.job_location_text:
+                    if  self.job_spec_name in self.job_title_text and self.location_spec_name in self.job_location_text:
                         print(f'JOB NAME SELECTED: {self.job_spec_name} \nLOCATION NAME SELECTED: {self.location_spec_name}')
                         
 
