@@ -77,7 +77,7 @@ class AutoAssistant():
 
                         try:
                             main_job_card = self.job_card_body.find_element(By.CSS_SELECTOR, 'button[data-qa="applyJobBtn"]')
-                            print(f'{main_job_card.text} existent')
+                           
                         
                         except Exception as e:
                             print(f'Exception finding main job card: {e}')
@@ -111,7 +111,7 @@ class AutoAssistant():
 
                         return True
                     except Exception as e:
-                            print(f'Easy apply button Applicable NOT FOUND: {e}')
+                            print(f'main_jobcard NOT FOUND: {e}')
             
             # Else condition
             try:
