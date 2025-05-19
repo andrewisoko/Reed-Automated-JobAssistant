@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
 import time 
 import random
 
@@ -56,14 +57,18 @@ class AutoAssistant():
 
             if len(self.job_card_bodies) < 3:
                 self.jobbody_amount = False
+                self.chromesettings.driver.close()
             
             else:
                 for self.job_card_body in self.job_card_bodies:
+                    
+                    
                     job_location = self.job_card_body.find_element(By.CSS_SELECTOR, "li[data-qa='job-card-location']")
                     job_title = self.job_card_body.find_element(By.CSS_SELECTOR, "[data-qa='job-card-title']")
-                    
+            
                     self.job_location_text = job_location.text
                     self.job_title_text = job_title.text
+                    
                     
                     print(
                                 f"Current value in the ITERATION = {self.job_spec_name} and  {self.location_spec_name} \nWeb element names {self.job_title_text} and {self.job_location_text}"
@@ -84,10 +89,15 @@ class AutoAssistant():
                             
                             except Exception as e:
                                 print(f'No main job card {e}\n Trying to find the job suggestion')
-                                job_suggestion = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_btnShortlistJob__jgO8k.btn.btn-inline")
-                                self.chromesettings.driver.execute_script("arguments[0].click();", job_suggestion)
-                                self.job_card_bodies.pop(index_job_card)
-                                print('Your job suggestion found !!!')
+                                try:
+                                    unshortlist = self.job_card_body.find_element(By.CSS_SELECTOR, "button[aria-label='Unshortlist job']")   
+                                    
+                                except NoSuchElementException:      
+                                    job_suggestion = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_btnShortlistJob__jgO8k.btn.btn-inline")
+                                    
+                                    self.chromesettings.driver.execute_script("arguments[0].click();", job_suggestion)
+                                    self.job_card_bodies.pop(index_job_card)
+                                    print('Your job suggestion found !!!')
 
                             main_jobcard_active = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_applyBtn__2N2jy.btn.btn-secondary:not(.disabled)")
                             time.sleep(self.chromesettings.random_time)
@@ -115,9 +125,12 @@ class AutoAssistant():
                 
                 # Else condition
                 try:
+                    
                     next_page_button = self.chromesettings.driver.find_element(By.CSS_SELECTOR, "a.page-link.next[aria-label='Next page']")
+                    print("Next btn element found")
                     self.chromesettings.driver.execute_script("arguments[0].click();", next_page_button)
-                    print(f'this is the current amount of card bodies: {len(self.job_card_bodies)}')
+                    print("Btn CLicked")
+                    
                     return self.job_selection()
                 
                 except Exception as e:
