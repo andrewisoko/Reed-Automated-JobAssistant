@@ -34,13 +34,12 @@ class Login():
         time.sleep(self.chromesettings.random_time)
         continue_button.click()
         
-        try:     
-            time.sleep(15)
-            accept_button = self.chromesettings.driver.find_element(
-            By.XPATH,"/html/body/div[2]/div[2]/div/div/div[2]/div/div/button"
-            )
-            accept_button.click()
-        except Exception:
-            print("It's been already clicked")
+         
+        time.sleep(20)
+        accept_button = self.chromesettings.driver.find_element(
+        By.XPATH,"/html/body/div[2]/div[2]/div/div/div[2]/div/div/button"
+        )
+        accept_button.click()
+        
         
     
