@@ -31,12 +31,12 @@ maininteraction_instance = MainInteraction()
 
 def main():
     
-    print(maininteraction_instance.job_tasks())
+    # print(maininteraction_instance.job_tasks())
     
-    # schedule.every(10).minutes.do(maininteraction_instance.job_tasks)
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
+    schedule.every(10).minutes.do(maininteraction_instance.job_tasks)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
             
 
 
