@@ -97,7 +97,7 @@ class AutoAssistant():
                                     
                                     self.chromesettings.driver.execute_script("arguments[0].click();", job_suggestion)
                                     self.job_card_bodies.pop(index_job_card)
-                                    print('Your job suggestion found !!!')
+                                    print('Your job suggestion found')
 
                             main_jobcard_active = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_applyBtn__2N2jy.btn.btn-secondary:not(.disabled)")
                             time.sleep(self.chromesettings.random_time)
@@ -127,9 +127,7 @@ class AutoAssistant():
                 try:
                     
                     next_page_button = self.chromesettings.driver.find_element(By.CSS_SELECTOR, "a.page-link.next[aria-label='Next page']")
-                    print("Next btn element found")
                     self.chromesettings.driver.execute_script("arguments[0].click();", next_page_button)
-                    print("Btn CLicked")
                     
                     return self.job_selection()
                 
