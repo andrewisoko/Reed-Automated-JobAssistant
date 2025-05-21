@@ -3,7 +3,7 @@ from inputs import Inputs
 import random
 import time
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
+
 
 
 
@@ -50,12 +50,11 @@ class FirstWebPage():
         
         self.chromesettings.driver.refresh()
         
-        try:
-            time.sleep(10)
-            last_week = self.chromesettings.driver.find_element(By.XPATH,"/html/body/div[1]/div[4]/div/div[3]/aside/div[2]/div/div[6]/div[2]/div/select/option[4]")
-            last_week.click()
-        except NoSuchElementException:
-            print("Last Week no found")
+   
+        time.sleep(10)
+        last_week = self.chromesettings.driver.find_element(By.XPATH,"/html/body/div[1]/div[4]/div/div[3]/aside/div[2]/div/div[6]/div[2]/div/select/option[4]")
+        last_week.click()
+        
         
     
   
