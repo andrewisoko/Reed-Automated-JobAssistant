@@ -39,14 +39,12 @@ class AutoAssistant():
         
         what_value = what_jobprocess.get_attribute("value")
         where_value = where_jobprocess.get_attribute("value")
+        
 
-
-        if what_value == self.firstwp.jobtitle_firstwp.lower():
-            self.job_spec_name = self.firstwp.jobtitle_firstwp
-        if where_value == self.firstwp.joblocation_firstwp.lower():
-            self.location_spec_name = self.firstwp.joblocation_firstwp
+        self.job_spec_name = what_value
+        self.location_spec_name = where_value
             
-            
+                 
         print(f'what_value={what_value}, where_value={where_value}')
         print(f'what_from_page={self.job_spec_name}, where_from_page={ self.location_spec_name}')
         
@@ -74,7 +72,7 @@ class AutoAssistant():
                                 f"Current value in the ITERATION = {self.job_spec_name} and  {self.location_spec_name} \nWeb element names {self.job_title_text} and {self.job_location_text}"
                             )
                 
-                    if  self.job_spec_name in self.job_title_text and self.location_spec_name in self.job_location_text:
+                    if  self.job_spec_name.lower() in self.job_title_text.lower() and self.location_spec_name.lower() in self.job_location_text.lower():
                         print(f'JOB NAME SELECTED: {self.job_spec_name} \nLOCATION NAME SELECTED: {self.location_spec_name}')
                         
 
