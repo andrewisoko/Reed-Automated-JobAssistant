@@ -33,6 +33,8 @@ class AutoAssistant():
 
     def job_selection(self):
         
+        """Finds the jobs from the website."""
+        
         
         what_jobprocess = self.chromesettings.driver.find_element(By.CSS_SELECTOR, 'input[data-qa="searchKeywordInput"]')
         where_jobprocess = self.chromesettings.driver.find_element(By.CSS_SELECTOR, 'input[data-qa="searchLocationInput"]')

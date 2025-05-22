@@ -16,6 +16,8 @@ class Inputs:
         
         
     def input_collection(self):
+        
+        """Collects data recquired for the program to work."""
        
 
         self.email = input("Please enter your Reed email: ")

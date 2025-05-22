@@ -8,6 +8,8 @@ from datetime import timedelta
 class ChromeSettings:
 
     def __init__(self):
+        
+        """Setting of the chrome browser."""
 
         # Create Chromeoptions instance
         self.options = webdriver.ChromeOptions()
