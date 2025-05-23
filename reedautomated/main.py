@@ -3,7 +3,6 @@ from chromesettings import ChromeSettings
 from firstwebpage import FirstWebPage
 from login import Login
 from reedautoassistant import AutoAssistant
-
 import schedule
 import time
 
@@ -17,7 +16,7 @@ class MainInteraction():
       
     def job_tasks(self):
         
-        """Function that contain most of the interactions with the website."""
+        """Function that contain most of the interactions with the website"""
         
     
         chrosettings = ChromeSettings()
@@ -41,12 +40,12 @@ maininteraction_instance = MainInteraction()
 def main():
     """Scheduling of the job searching"""
 
+
     schedule.every(2).minutes.do(maininteraction_instance.job_tasks)
     while True:
         schedule.run_pending()
         time.sleep(1)
-    
-        
+     
 
 
 if __name__ == "__main__":
