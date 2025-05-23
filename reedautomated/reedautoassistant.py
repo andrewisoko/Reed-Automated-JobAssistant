@@ -91,7 +91,7 @@ class AutoAssistant():
                                 print(f'No main job card {e}\n Trying to find the job suggestion')
                                 try:
                                     unshortlist = self.job_card_body.find_element(By.CSS_SELECTOR, "button[aria-label='Unshortlist job']")   
-                                    
+                                    print(f"unshort list button already been clicked.")
                                 except NoSuchElementException:      
                                     job_suggestion = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_btnShortlistJob__jgO8k.btn.btn-inline")
                                     
