@@ -47,9 +47,16 @@ def main():
         schedule.run_pending()
         time.sleep(1)
      
+     
+def run_as_script():
+    
+    """Runs the entire main.py file as a script"""
+    
+    maininteraction_instance.input_instance.input_collection()
+    main()
+
 
 
 if __name__ == "__main__":
-    maininteraction_instance.input_instance.input_collection()
-    main()
+    run_as_script()
  
