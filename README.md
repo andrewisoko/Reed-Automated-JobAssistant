@@ -6,3 +6,11 @@
 
 </div>
 
+## Instructions 
+
+Option 1:
+run this command on command prompt / bash 
+
+
+
+
