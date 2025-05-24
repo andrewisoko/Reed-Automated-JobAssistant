@@ -1,1 +1,8 @@
- ##             Reed-Automated-JobAssistant
+
+
+ <div align="center">
+
+ # Reed-Automated-JobAssistant 🤖
+
+</div>
+
