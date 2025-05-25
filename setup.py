@@ -2,11 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name="reedautomated",
-    version="0.3.0",  
+    version="0.4.0",  
      packages=find_packages(include=['reedautomated', 'reedautomated.*']),
      install_requires=[
         "selenium",
-        "schedule"
+        "schedule",
+        "chromedriver"
     ],
       entry_points={
         "console_scripts": [
