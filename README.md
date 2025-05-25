@@ -28,5 +28,9 @@ then
 run-reedautoassistant
 ```
 
+the initial freeze of the  command-line interface is part of the process. Wait around 30 if wanting to check job related messages popping up.
+
+
+
 * Insert data needed for the website interaction. PERSONAL INFORMATION WILL NOT BE STORED.
 
