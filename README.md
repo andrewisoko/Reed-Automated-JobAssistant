@@ -28,9 +28,9 @@ then
 run-reedautoassistant
 ```
 
-the initial freeze of the  command-line interface is part of the process. Wait around 30 if wanting to check job related messages popping up.
+the initial freeze of the  command-line interface is part of the process. Wait around 30 minutes if wanting to check job related messages popping up.
 
-![Alt text](https://github.com/andrewisoko/Reed-Automated-JobAssistant/tree/32a2b265702946177c769dc6fbb91414b2fcf624/images)
+![Alt text](https://github.com/andrewisoko/Reed-Automated-JobAssistant/blob/main/images/Command-line%20example.png)
 
 
 * Insert data needed for the website interaction. PERSONAL INFORMATION WILL NOT BE STORED.
