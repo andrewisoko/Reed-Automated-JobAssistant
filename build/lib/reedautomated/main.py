@@ -42,7 +42,7 @@ def main():
     """Scheduling of the job searching"""
 
 
-    schedule.every(random.choice(range(17,22))).minutes.do(maininteraction_instance.job_tasks)
+    schedule.every(random.choice(range(5,11))).minutes.do(maininteraction_instance.job_tasks)
     while True:
         schedule.run_pending()
         time.sleep(1)
