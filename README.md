@@ -16,14 +16,24 @@ A smart job search bot that helps in finding the perfect role on reed.co.uk. Use
 
 * Python is required to run the program https://wiki.python.org/moin/BeginnersGuide/Download
 
-* Run this command on command prompt / bash 
+
+* Run these commands on command prompt / bash (find it in the PC/laptop search bar)
+
+* To check if python has been succesully installed
+  
+ ```
+python --version
+```
+then ENTER
+
+* To install the bot in the machine 
 
 ```
 pip install reedautomated
 ```
 then ENTER
 
-to start the bot
+* To start the bot
 
 ```
 run-reedautoassistant
