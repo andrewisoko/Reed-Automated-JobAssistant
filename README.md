@@ -48,7 +48,7 @@ the initial freeze of the  command-line interface is part of the process. Wait a
 
   ## Additional notes
 
-  * As long as the terminal (command prompt) screen is not closed, the program should be running even in sleep mode.
-  * Even though the bot is independent it is always advised to double check the terminal.
+* As long as the terminal (command prompt) screen is not closed, the program should be running even when the machine is in sleep mode.
+* Even though the bot is independent it is always advised to double check the terminal.
 
 
