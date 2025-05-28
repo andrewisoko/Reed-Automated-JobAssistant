@@ -21,11 +21,14 @@ A smart job search bot that helps in finding the perfect role on reed.co.uk. Use
 ```
 pip install reedautomated
 ```
-then
+then ENTER
+
+to start the bot
 
 ```
 run-reedautoassistant
 ```
+then ENTER
 
 the initial freeze of the  command-line interface is part of the process. Wait around 30 minutes if wanting to check job related messages popping up.
 
