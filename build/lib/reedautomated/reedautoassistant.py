@@ -36,8 +36,8 @@ class AutoAssistant():
         """Finds the jobs from the website."""
         
         
-        what_jobprocess = self.chromesettings.driver.find_element(By.CSS_SELECTOR, 'input[data-qa="searchKeywordInput"]')
-        where_jobprocess = self.chromesettings.driver.find_element(By.CSS_SELECTOR, 'input[data-qa="searchLocationInput"]')
+        what_jobprocess = self.chromesettings.browser.find_element(By.CSS_SELECTOR, 'input[data-qa="searchKeywordInput"]')
+        where_jobprocess = self.chromesettings.browser.find_element(By.CSS_SELECTOR, 'input[data-qa="searchLocationInput"]')
         
         what_value = what_jobprocess.get_attribute("value")
         where_value = where_jobprocess.get_attribute("value")
@@ -51,13 +51,13 @@ class AutoAssistant():
         print(f'what_from_page={self.job_spec_name}, where_from_page={ self.location_spec_name}')
         
         time.sleep(10)
-        self.job_card_bodies = self.chromesettings.driver.find_elements(By.CSS_SELECTOR, "div.job-card_jobCard__body__86jgk.card-body")
+        self.job_card_bodies = self.chromesettings.browser.find_elements(By.CSS_SELECTOR, "div.job-card_jobCard__body__86jgk.card-body")
         
         while self.jobbody_amount:
 
             if len(self.job_card_bodies) < 3:
                 self.jobbody_amount = False
-                self.chromesettings.driver.close()
+                self.chromesettings.browser.close()
             
             else:
                 for self.job_card_body in self.job_card_bodies:
@@ -82,7 +82,7 @@ class AutoAssistant():
                             index_job_card = self.job_card_bodies.index(self.job_card_body)
                             print(f'this is the current amount of card bodies: {len(self.job_card_bodies)}')
                             
-                            self.chromesettings.driver.execute_script("arguments[0].scrollIntoView(true);", self.job_card_body)
+                            self.chromesettings.browser.execute_script("arguments[0].scrollIntoView(true);", self.job_card_body)
 
                             try:
                                 main_job_card = self.job_card_body.find_element(By.CSS_SELECTOR, 'button[data-qa="applyJobBtn"]')
@@ -95,13 +95,13 @@ class AutoAssistant():
                                 except NoSuchElementException:      
                                     job_suggestion = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_btnShortlistJob__jgO8k.btn.btn-inline")
                                     
-                                    self.chromesettings.driver.execute_script("arguments[0].click();", job_suggestion)
+                                    self.chromesettings.browser.execute_script("arguments[0].click();", job_suggestion)
                                     self.job_card_bodies.pop(index_job_card)
                                     print('Your job suggestion found')
 
                             main_jobcard_active = self.job_card_body.find_element(By.CSS_SELECTOR, "button.job-card_applyBtn__2N2jy.btn.btn-secondary:not(.disabled)")
                             time.sleep(self.chromesettings.random_time)
-                            self.chromesettings.driver.execute_script("arguments[0].click();", main_jobcard_active)
+                            self.chromesettings.browser.execute_script("arguments[0].click();", main_jobcard_active)
                             print("MAIN ACTIVE CLICKED")
                             
                             job_description = self.chromesettings.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[data-qa='submit-application-btn']")))
@@ -126,8 +126,8 @@ class AutoAssistant():
                 # Else condition
                 try:
                     
-                    next_page_button = self.chromesettings.driver.find_element(By.CSS_SELECTOR, "a.page-link.next[aria-label='Next page']")
-                    self.chromesettings.driver.execute_script("arguments[0].click();", next_page_button)
+                    next_page_button = self.chromesettings.browser.find_element(By.CSS_SELECTOR, "a.page-link.next[aria-label='Next page']")
+                    self.chromesettings.browser.execute_script("arguments[0].click();", next_page_button)
                     
                     return self.job_selection()
                 

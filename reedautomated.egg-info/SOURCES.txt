@@ -10,6 +10,5 @@ reedautomated/reedautoassistant.py
 reedautomated.egg-info/PKG-INFO
 reedautomated.egg-info/SOURCES.txt
 reedautomated.egg-info/dependency_links.txt
-reedautomated.egg-info/entry_points.txt
 reedautomated.egg-info/requires.txt
 reedautomated.egg-info/top_level.txt

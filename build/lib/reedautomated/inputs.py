@@ -11,6 +11,8 @@ class Inputs:
         self.password = None
         self.job_title = None
         self.job_location = None 
+        self.part_time_option = None
+        self.remote = None
         self.jobtitle_list = []
         self.joblocation_list = []
         
@@ -28,6 +30,7 @@ class Inputs:
             
         self.job_title = input("Enter desired job title: ")
         self.jobtitle_list.append(self.job_title)
+        
         
         while True:
             
@@ -59,8 +62,11 @@ class Inputs:
             else:
                 print("Invalid input")
         
-    
+        self.part_time_option= input("Part time? (Y/n): ")
+        self.remote = input("Remote? (Y/n): ")
+
         print (f"job title list {self.jobtitle_list}\nJob location list {self.joblocation_list}")
+
         
 
 

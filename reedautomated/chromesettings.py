@@ -39,14 +39,14 @@ class ChromeSettings:
         self.options.add_experimental_option("detach", True)
 
         # Setting the driver path and requesting a page
-        self.driver = webdriver.Chrome(options=self.options)
+        self.browser = webdriver.Chrome(options=self.options)
 
         # Changing the property of the navigator value for webdriver to undefined
-        self.driver.execute_script(
+        self.browser.execute_script(
             "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
         )
-        self.driver.set_window_size(1920, 1080)
+        self.browser.set_window_size(1920, 1080)
     
         self.random_time = random.randrange(2, 11)
         self.loop_duration_time = timedelta(minutes=random.choice(range(15,30)))
-        self.wait = WebDriverWait(self.driver, 10)
+        self.wait = WebDriverWait(self.browser, 10)

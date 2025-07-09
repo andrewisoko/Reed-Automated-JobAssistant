@@ -1,8 +1,8 @@
-from .inputs import Inputs
-from .chromesettings import ChromeSettings
-from .firstwebpage import FirstWebPage
-from .login import Login
-from .reedautoassistant import AutoAssistant
+from reedautomated.inputs import Inputs
+from reedautomated.chromesettings import ChromeSettings
+from reedautomated.firstwebpage import FirstWebPage
+from reedautomated.login import Login
+from reedautomated.reedautoassistant import AutoAssistant
 import schedule
 import time
 import random
@@ -31,7 +31,7 @@ class MainInteraction():
             autoassistant.job_selection()
         except Exception as err:
             print(f"Error at {err}")
-            chrosettings.driver.close()
+            chrosettings.browser.close()
             
     
         
@@ -40,7 +40,6 @@ maininteraction_instance = MainInteraction()
 
 def main():
     """Scheduling of the job searching"""
-
 
     schedule.every(random.choice(range(5,11))).minutes.do(maininteraction_instance.job_tasks)
     while True:
