@@ -35,7 +35,7 @@ pip install reedautomated
 * To start the bot
 
 ```
-run-reedautoassistant
+python -m reedautomated.main
 ```
 
 * Insert data needed for the website interaction. PERSONAL INFORMATION WILL NOT BE STORED.
@@ -46,7 +46,10 @@ run-reedautoassistant
   
 * After inserting the data, no active interventions should be needed. Just relax and wait the job suggestions.
 
+## Potential Issues
 
+* Enter your credentials correctly.
+  
 
 
   ## Additional notes
